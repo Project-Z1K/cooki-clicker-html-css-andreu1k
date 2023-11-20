@@ -129,6 +129,72 @@ function cookieMission() {
       }
     }, tiempo * 1000); // Tiempo en milisegundos
   }
+
+  function showMessage(message) {
+    const messageElement = document.createElement('div');
+    messageElement.textContent = message;
+    messageElement.classList.add('message');
+    document.body.appendChild(messageElement);
+  
+    setTimeout(() => {
+      document.body.removeChild(messageElement);
+    }, 3000); // Eliminar el mensaje después de 3 segundos
+  }
+  
+  // Uso:
+  showMessage('¡Has comprado un Super Clicker!');
+
+  
+  function highlightButton(buttonId) {
+    const button = document.getElementById(buttonId);
+    button.classList.add('highlight');
+  
+    setTimeout(() => {
+      button.classList.remove('highlight');
+    }, 2000); // Quitar el resaltado después de 2 segundos
+  }
+  
+  // Uso:
+  highlightButton('superClicker');
+
+  
+  function animateCookieOnBonus() {
+    const cookie = document.getElementById('cookie');
+    cookie.style.animation = 'grow 1s ease-in-out';
+    setTimeout(() => {
+      cookie.style.animation = ''; // Eliminar la animación después de 1 segundo
+    }, 1000);
+  }
+  
+  // Uso:
+  animateCookieOnBonus();
+
+  // Almacenar las cookies en el localStorage
+function guardarCookies() {
+    localStorage.setItem('cookies', cookies);
+  }
+  
+  // Recuperar las cookies del localStorage al iniciar el juego
+  function cargarCookies() {
+    if (localStorage.getItem('cookies')) {
+      cookies = parseInt(localStorage.getItem('cookies'));
+      updateCookieDisplay();
+    }
+  }
+  
+  // Llama a cargarCookies al inicio del juego para restaurar el estado previo
+  cargarCookies();
+  
+  // Actualiza las cookies y guarda el progreso al hacer clic en la galleta
+  cookieImg.addEventListener('click', () => {
+    cookies++;
+    updateCookieDisplay();
+    guardarCookies(); // Guarda las cookies después de cada clic
+  });
+  
+  // Otras funciones donde se actualicen las cookies (compra de artefactos, etc.) también deberían llamar a guardarCookies() para mantener el progreso
+  
+  
   
   
   
