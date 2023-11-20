@@ -245,4 +245,28 @@ body {
     margin: 20px auto;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
   }
+
+
+  /* Estilos generales para dispositivos móviles */
+
+/* Cambios en la fuente y otros ajustes para pantallas pequeñas */
+@media only screen and (max-width: 768px) {
+  body {
+    font-size: 14px;
+    /* Otros ajustes de estilo para pantallas más pequeñas */
+  }
+
+  /* Aumentar el tamaño de los botones para dispositivos móviles */
+  button {
+    padding: 12px 24px;
+    font-size: 18px;
+  }
+
+  /* Ajustes específicos para ciertos elementos en dispositivos móviles */
+  .cookie-area img {
+    width: 150px;
+    /* Otros ajustes para la imagen de la galleta */
+  }
+}
+
   

@@ -1,0 +1,25 @@
+/* Estilos para la página 'nueva_pagina.html' */
+body.nueva-pagina {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    color: #333;
+  }
+  
+  body.nueva-pagina .content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  body.nueva-pagina h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  body.nueva-pagina p {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+  
