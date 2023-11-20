@@ -6,9 +6,12 @@ const cookieImg = document.getElementById('cookie');
 const cookiesDisplay = document.getElementById('cookies');
 const autoClickerBtn = document.getElementById('autoClicker');
 const superClickerBtn = document.getElementById('superClicker');
+const megaClickerBtn = document.getElementById('megaClicker');
 const languageSelect = document.getElementById('language-select');
 const welcomeText = document.getElementById('welcome-text');
 const artifactsText = document.getElementById('artifacts-text');
+
+
 
 let autoClickerInterval;
 let superClickerInterval;
@@ -46,6 +49,18 @@ superClickerBtn.addEventListener('click', () => {
     }, 1000);
   }
 });
+
+megaClickerBtn.addEventListener('click', () => {
+    if (cookies >= 100 && !autoClickerInterval && !gamePaused) {
+      cookies -= 100;
+      autoClickers++;
+  
+      autoClickerInterval = setInterval(() => {
+        cookies += autoClickers;
+        updateCookieDisplay();
+      }, 1000);
+    }
+  });
 
 languageSelect.addEventListener('change', function() {
   const selectedLanguage = languageSelect.value;
